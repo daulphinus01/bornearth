@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/bornearth_back_btn_action_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_back_btn"
+        android:contentDescription="@string/action_bar_retour"/>
+
+    <ImageView
+        android:id="@+id/bornearth_delete_btn_action_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_delete_photo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/supprimer_photo"/>
+
+    <ImageView
+        android:id="@+id/borneath_add_photo_to_gallery_btn_action_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_add_photo_to_gallery"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/ajouter_photo"/>
+
+</RelativeLayout>

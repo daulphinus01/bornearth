@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">bornearth</string>
+    <string name="selectionnez_votre_date_de_naissance">Saisissez / Modifiez votre profile</string>
+    <string name="selectionnez_memoire">Memoire</string>
+    <string name="pub_area">Pub area</string>
+    <string name="field_separator">:</string>
+    <string name="parlez_vous_frnc">Bonjour, parlez moi de votre date de naissance !</string>
+    <string name="saisi_enregistrer_vos_informations">Enregistrer vos informations</string>
+    <string name="saisi_heure_de_naissance">Heure de naissance</string>
+    <string name="saisi_date_de_naissance">Date de naissance</string>
+    <string name="saisi_pr_nom">Prénom</string>
+    <string name="saisi_nom">Nom</string>
+    <string name="image_actuelle">Image actuelle</string>
+    <string name="ajouter_photo">Ajouter photo</string>
+    <string name="supprimer_photo">Supprimer photo</string>
+    <string name="action_bar_retour">Retour</string>
+    <string name="image_absent">Image absent</string>
+</resources>
