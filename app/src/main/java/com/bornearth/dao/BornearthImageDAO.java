@@ -3,8 +3,6 @@
  */
 package com.bornearth.dao;
 
-import static com.bornearth.utils.BornearthConst.*;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,6 +12,13 @@ import com.bornearth.utils.BornearthConst;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.bornearth.utils.BornearthConst.BORNEARTH_IMAGES_TABLE_NAME;
+import static com.bornearth.utils.BornearthConst.CLE_ETRANGER_USER;
+import static com.bornearth.utils.BornearthConst.DATE_IMG;
+import static com.bornearth.utils.BornearthConst.DESC_IMG;
+import static com.bornearth.utils.BornearthConst.NOM_IMG_MIN;
+import static com.bornearth.utils.BornearthConst.NOM_IMG_REEL;
 
 /**
  * @author Marcellin RWEGO
@@ -87,7 +92,7 @@ public class BornearthImageDAO extends DAOBase {
     }
 
     /**
-     * Renvoi la liste de toutes les chemins des images stockes dans la base de donnees
+     * Renvoi la liste de toutes les chemins des images stockées dans la base de données
      * @return : Liste des URL (String) des images
      */
     public List<BornearthImage> selectionner() {

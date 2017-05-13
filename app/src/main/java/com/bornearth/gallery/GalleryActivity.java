@@ -136,6 +136,7 @@ public class GalleryActivity extends AppCompatActivity {
      * sequence.
      */
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
         }
