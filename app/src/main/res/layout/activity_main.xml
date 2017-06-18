@@ -22,115 +22,107 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
-    <LinearLayout
-        android:layout_width="470dp"
-        android:layout_height="320dp"
-        android:orientation="vertical"
-        android:background="@drawable/rect_round_coners"
+    <ScrollView
         android:alpha="0.8"
-        android:paddingTop="10dp"
-        android:layout_marginTop="80dp"
-        android:paddingBottom="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/personal_info"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorAccentBlack"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_go_to_photo_gallery"
+        android:layout_below="@+id/button_select_date"
+        android:background="@drawable/rect_round_coners">
 
         <LinearLayout
-            android:id="@+id/linear_date_separated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingBottom="10dp"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/date_text_area"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:id="@+id/personal_info"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorAccentBlack"/>
 
-            <TextView
-                android:id="@+id/year_text_area"
+            <LinearLayout
+                android:id="@+id/linear_date_separated"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccentBlack"/>
-            <TextView
-                android:id="@+id/month_text_area"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccentBlack"/>
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/day_text_area"
+                <TextView
+                    android:id="@+id/date_text_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccentBlack"/>
+
+                <TextView
+                    android:id="@+id/year_text_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAccentBlack"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccentBlack"/>
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:textColor="@color/colorAccentBlack"
+                    android:id="@+id/bornearth_hour_min_sec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/total_nbr_jours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAccentBlack"/>
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:paddingTop="20dp">
-
-            <TextView
-                android:textColor="@color/colorAccentBlack"
-                android:id="@+id/bornearth_hour_min_sec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="Holla"/>
-
-            <TextView
-                android:id="@+id/total_nbr_jours"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccentBlack"/>
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/button_go_to_photo_gallery"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back_button"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="@string/selectionnez_memoire"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"/>
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

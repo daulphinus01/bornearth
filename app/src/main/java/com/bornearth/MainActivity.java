@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bornearth.gallery.GalleryActivity;
 import com.bornearth.utils.BornEarthSharePrefs;
+import com.bornearth.utils.BornearthConst;
 import com.bornearth.utils.ProfileForm;
 import com.example.kevin.bornearth.R;
 
@@ -27,11 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private static final long UNE_SECONDE = 1000;
 
     private static final int PROFILE_FORM_RESULT = 997;
+    public static final String JOURS_ECOULES_DEPUIS_VOTRE_NAISSANCE = "Jours écoulés depuis votre naissance : \n%1$d";
 
     private TextView dateTextView;
     private TextView yearTextView;
-    private TextView monthTextView;
-    private TextView dayTextView;
+    //private TextView monthTextView;
+    //private TextView dayTextView;
     private TextView personalInfo;
     private TextView nbrTotalJours;
 
@@ -78,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         dateTextView = (TextView) findViewById(R.id.date_text_area);
 
         yearTextView = (TextView) findViewById(R.id.year_text_area);
-        monthTextView = (TextView) findViewById(R.id.month_text_area);
-        dayTextView = (TextView) findViewById(R.id.day_text_area);
+        //monthTextView = (TextView) findViewById(R.id.month_text_area);
+        //dayTextView = (TextView) findViewById(R.id.day_text_area);
         personalInfo = (TextView) findViewById(R.id.personal_info);
 
         hourMinSecTextView = (TextView) findViewById(R.id.bornearth_hour_min_sec);
@@ -127,11 +129,11 @@ public class MainActivity extends AppCompatActivity {
     private void calculerValeursPourVues(LocalDateTime localDateTime, int year, int month, int day) {
         LocalDateTime diff = minusLocalDateTime(new LocalDateTime(year, month, day, minute, month, second), localDateTime);
         int nbrDays = Days.daysBetween(new LocalDate(year, month, day), LocalDate.now()).getDays();
-        dayTextView.setText(formatterAffichage(diff.getDayOfMonth(), " jours"));
-        monthTextView.setText(formatterAffichage(diff.getMonthOfYear(), " mois"));
-        yearTextView.setText(formatterAffichage(diff.getYear(), " an(s)"));
+        //dayTextView.setText(formatterAffichage(diff.getDayOfMonth(), " jours"));
+        //monthTextView.setText(formatterAffichage(diff.getMonthOfYear(), " mois"));
+        yearTextView.setText(String.format(BornearthConst.TEXTE_AFFICHE_ANNEE_MOIS_JOUR, diff.getYear(), diff.getMonthOfYear(), diff.getDayOfMonth()));
         hourMinSecTextView.setText(String.format("%1$dh %2$dm %3$ds", diff.getHourOfDay(), diff.getMinuteOfHour(), diff.getSecondOfMinute()));
-        nbrTotalJours.setText(String.format("Jours écoulés depuis votre naissance : %1$d", nbrDays));
+        nbrTotalJours.setText(String.format(JOURS_ECOULES_DEPUIS_VOTRE_NAISSANCE, nbrDays));
     }
 
     private String formatterAffichage(int val, String suffixe) {
@@ -167,14 +169,14 @@ public class MainActivity extends AppCompatActivity {
             int monthDiff = periodDiff.getMonthOfYear();
 
             if (monthDiff == 1) {
-                yearTextView.setText(formatterAffichage(yearDiff, " an(s)"));
-            }
+                yearTextView.setText(String.format(BornearthConst.TEXTE_AFFICHE_ANNEE_MOIS_JOUR, yearDiff, monthDiff, dayDiff));
+            }/*
             if (dayDiff > 29) {
                 monthTextView.setText(formatterAffichage(monthDiff, " mois"));
             }
             if (hoursDiff == 0) {
                 dayTextView.setText(formatterAffichage(dayDiff, " jours"));
-            }
+            }*/
 
             hourMinSecTextView.setText(String.format("%1$dh %2$dm %3$ds", hoursDiff, minDiff, secDiff));
         }

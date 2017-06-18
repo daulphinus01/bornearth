@@ -52,6 +52,6 @@ public final class BornearthConst {
     public static final String IMAGE_URI_STR = "positionInt";
     public static final String IMAGE_DESC = "imageDateChargement";
 
-
+    public static final String TEXTE_AFFICHE_ANNEE_MOIS_JOUR = "Vous êtes sur la terre depuis: \n%s an(s) - %s mois - %s jour(s)";
 
 }
